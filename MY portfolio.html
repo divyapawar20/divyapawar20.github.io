@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divya Anil Pawar | Developer Portfolio</title>
+    <meta name="description" content="A professional portfolio website for Divya Anil Pawar, a developer showcasing projects, skills, and experience in Web Development and Cybersecurity.">
+    <meta name="keywords" content="portfolio, software developer, web developer, cybersecurity, personal website">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0a18; /* A darker, richer background */
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .skill-tag {
+            background-color: #374151; /* bg-gray-700 */
+            transition: all 0.2s ease-in-out;
+        }
+        .skill-tag:hover {
+            background-color: #4f46e5; /* bg-indigo-600 */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #a5b4fc, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Animation for revealing sections on scroll */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .reveal {
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        .revealed {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-white tracking-wider">Divya Anil Pawar</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#experience" class="text-gray-300 hover:text-white transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#experience" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Experience</a>
+                <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section id="hero" class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                Hi, I'm <span class="gradient-text">Divya Anil Pawar</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                A proficient developer with practical experience in Web Development and Cybersecurity. I build secure, responsive, and user-focused web applications.
+            </p>
+            <div class="flex justify-center items-center space-x-4">
+                <a href="mailto:divya.pawar001515@gmail.com" class="text-gray-300 hover:text-indigo-400 transition-colors duration-200" title="Email">
+                    <i data-lucide="mail" class="w-7 h-7"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/divya2020/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-indigo-400 transition-colors duration-200" title="LinkedIn">
+                    <i data-lucide="linkedin" class="w-7 h-7"></i>
+                </a>
+                <a href="https://github.com/divyapawar20" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-indigo-400 transition-colors duration-200" title="GitHub">
+                    <i data-lucide="github" class="w-7 h-7"></i>
+                </a>
+                <a href="tel:+919322831283" class="text-gray-300 hover:text-indigo-400 transition-colors duration-200" title="Phone">
+                    <i data-lucide="phone" class="w-7 h-7"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gray-900/50 reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white gradient-text">About Me</h2>
+                <div class="max-w-4xl mx-auto text-center text-gray-300 leading-relaxed">
+                    <p>
+                        I am a dedicated and lifelong learner applying computer science fundamentals and hands-on project experience to deliver robust and high-quality software solutions. I have successfully collaborated with teams on full-stack projects to build secure, responsive, and user-focused web applications. My background includes both web development and network security, giving me a well-rounded perspective on creating modern digital products.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white gradient-text">Work Experience</h2>
+                <div class="relative max-w-3xl mx-auto">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-700"></div>
+                    
+                    <!-- Timeline Item 1 -->
+                    <div class="relative mb-12 flex justify-between items-center w-full">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="p-6 rounded-lg glass-effect">
+                                <h3 class="font-bold text-lg text-indigo-400">Web Designer Intern</h3>
+                                <p class="text-sm text-gray-400 mb-3">Midbrains Technologies, Pune</p>
+                                <p class="text-sm text-gray-300 text-left">Engineered responsive web applications and built dynamic backend functionalities using the MERN stack. I was responsible for integrating RESTful APIs for seamless data flow and collaborated in an agile environment to enhance project efficiency.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-indigo-500 rounded-full border-4 border-gray-900"></div>
+                        <div class="w-1/2"></div>
+                    </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="relative mb-8 flex justify-between items-center w-full">
+                         <div class="w-1/2"></div>
+                         <div class="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-indigo-500 rounded-full border-4 border-gray-900"></div>
+                         <div class="w-1/2 pl-8 text-left">
+                            <div class="p-6 rounded-lg glass-effect">
+                                <h3 class="font-bold text-lg text-indigo-400">Network Security Intern</h3>
+                                <p class="text-sm text-gray-400 mb-3">AICTE (Powered by Fortinet)</p>
+                                <p class="text-sm text-gray-300">Acquired hands-on experience in core cybersecurity principles. I actively configured firewall policies, analyzed network protocols, and implemented security measures to protect systems against threats like intrusions and malware.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gray-900/50 reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white gradient-text">Skills & Technologies</h2>
+                <div class="max-w-5xl mx-auto">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-indigo-400 mb-4 text-center">Programming & Frontend</h3>
+                        <div class="flex flex-wrap gap-3 justify-center">
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">C++</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">HTML</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">CSS</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Python</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Java</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">JavaScript</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">UI/UX Design</span>
+                        </div>
+                    </div>
+                     <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-indigo-400 mb-4 text-center">Database & Backend</h3>
+                        <div class="flex flex-wrap gap-3 justify-center">
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">SQL</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">MySQL</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">NoSQL</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Node.js</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-indigo-400 mb-4 text-center">Development Tools & Concepts</h3>
+                        <div class="flex flex-wrap gap-3 justify-center">
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Git & GitHub</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Docker</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Linux</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Virtualization</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">OOPS</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">DBMS</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Cloud Computing</span>
+                            <span class="skill-tag px-4 py-2 rounded-full text-sm font-medium">Networking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white gradient-text">Featured Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Project 1 -->
+                    <div class="glass-effect rounded-lg overflow-hidden group transition-transform duration-300 hover:transform hover:-translate-y-2">
+                        <img src="https://placehold.co/600x400/0c0a18/818cf8?text=Cybersecurity+Firewall" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-indigo-400">Centralized Context-Aware Firewall</h3>
+                            <p class="text-gray-300 text-sm mb-4">Designed and deployed a robust security solution to proactively mitigate threats. This system integrates an Intrusion Detection System (IDS) with dynamic blocking and centralized logging, utilizing tools like Fail2Ban, UFW, and Suricata to automate threat response.</p>
+                            <div class="flex justify-between items-center mt-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-1 rounded">Cybersecurity</span>
+                                    <span class="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-1 rounded">Fail2Ban</span>
+                                    <span class="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-1 rounded">Suricata</span>
+                                </div>
+                                <a href="#" class="inline-flex items-center text-sm font-semibold text-indigo-400 hover:text-indigo-300">View Code <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="glass-effect rounded-lg overflow-hidden group transition-transform duration-300 hover:transform hover:-translate-y-2">
+                        <img src="https://placehold.co/600x400/0c0a18/818cf8?text=Full-Stack+Web+App" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-indigo-400">UP-Skiller - Course Registration App</h3>
+                            <p class="text-gray-300 text-sm mb-4">Developed a full-stack MERN application to streamline student course registration. It features a responsive UI, real-time data sync via MongoDB Campus API, and is containerized for scalable deployment with Docker. The RESTful API backend ensures efficient data management.</p>
+                             <div class="flex justify-between items-center mt-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-1 rounded">Full-Stack</span>
+                                    <span class="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-1 rounded">JavaScript</span>
+                                    <span class="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-1 rounded">Node.js</span>
+                                    <span class="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-1 rounded">MongoDB</span>
+                                    <span class="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-1 rounded">REST API</span>
+                                    <span class="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-1 rounded">Docker</span>
+                                </div>
+                                <a href="#" class="inline-flex items-center text-sm font-semibold text-indigo-400 hover:text-indigo-300">View Code <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-900/50 reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 gradient-text">Get In Touch</h2>
+                <p class="text-gray-300 mb-8 max-w-2xl mx-auto">I'm actively seeking new opportunities and am open to discussing projects, creative ideas, or ways we can collaborate. Let's connect!</p>
+                <a href="mailto:divya.pawar001515@gmail.com" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-indigo-700 transition duration-300 inline-flex items-center text-lg shadow-lg shadow-indigo-600/30 hover:shadow-xl hover:shadow-indigo-600/40">
+                    <i data-lucide="mail" class="w-5 h-5 mr-3"></i>
+                    Say Hello
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-400">
+            <p>&copy; 2024 Divya Anil Pawar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+
+
